@@ -1,0 +1,12 @@
+C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\bin\Debug\BootloaderDeployer.exe
+C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\bin\Debug\BootloaderDeployer.pdb
+C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\bin\Debug\BootloaderDeployer.xml
+C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\obj\Debug\BootloaderDeployer.Form1.resources
+C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\obj\Debug\BootloaderDeployer.Resources.resources
+C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\obj\Debug\BootloaderDeployer.vbproj.GenerateResource.Cache
+C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\obj\Debug\BootloaderDeployer.exe
+C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\obj\Debug\BootloaderDeployer.xml
+C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\obj\Debug\BootloaderDeployer.pdb
+C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\bin\Debug\BootloaderDeployer.exe.config
+C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\obj\Debug\BootloaderDeployer.exe.manifest
+C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\obj\Debug\BootloaderDeployer.TrustInfo.xml
