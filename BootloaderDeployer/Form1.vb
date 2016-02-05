@@ -8,18 +8,59 @@ Imports System.Windows.Forms.Form
 Imports System.Runtime.InteropServices
 Imports System.Drawing
 Imports System.Text
+Imports System.Security.Principal
 
 
 Public Class Form1
     Dim AppName As String = "VHD Bootloader"
     Dim bootmode As String
     Dim UIDval As String
-    Dim temp As String = Path.GetTempPath() 'Appdata\local\temp\
+    Dim EFIq As Integer = 0
+    ' Dim temp As String = Path.GetTempPath() 'Appdata\local\temp\
+    Dim identity = WindowsIdentity.GetCurrent()
+    Dim principal = New WindowsPrincipal(identity)
+    Dim isElevated As Boolean = principal.IsInRole(WindowsBuiltInRole.Administrator)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-       
+        If (isElevated = False) Then
+            MessageBox.Show("Please Run this Program as Administrator", AppName, _
+            MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.Close()
+        End If
+        'BUTTON ONE
+        BCDWriteSilent()
+
+        '------------------------------------------
+        'BUTTON TWO
+        UEFICheck()
+        Button3.Enabled = True
+        '-------------------------------------------------------------
+
+
     End Sub
 
+    Sub UEFICheck()
+        If System.IO.File.Exists("C:\BCDinfo.txt") = True Then
+            FindStringInFile()
+            If EFIq = 1 Then
+                'uefiq  0= not found, 1=UEFI, 2= legacy
+                'MessageBox.Show("Serial number found")
+                Label1.Text = "Boot mode: UEFI"
+                Label1.Visible = True
+                bootmode = "UEFI"
+
+            ElseIf EFIq = 2 Then
+                Label1.Text = "Boot mode: Legacy"
+                Label1.Visible = True
+                bootmode = "Legacy"
+            End If
+        Else
+            MessageBox.Show("Step1 incomplete")
+            Button1.Visible = True
+            Button2.Visible = True
+            Label3.Visible = True
+        End If
+    End Sub
 
     'Sub BCDINFO()
 
@@ -50,32 +91,75 @@ Public Class Form1
         process = process.Start(application)
         Dim command As String = "BCDEDIT>C:\BCDinfo.txt" _
            & vbCrLf & "exit"
-
         'myStreamWriter.WriteLine(Forms.Keys.Control + Forms.Keys.C)
         process.StandardInput.WriteLine(command)
-        'process.WaitForExit()
+        process.WaitForExit()
         'System.Threading.Thread.Sleep(1000)
         'process.Kill()
         process.Close()
     End Sub
 
+    Sub BCDWriteSilent()
+        Dim application As New ProcessStartInfo("cmd.exe") With
+                         {.RedirectStandardInput = True, .UseShellExecute = False}
+        Dim process As New Process
+        application.WindowStyle = ProcessWindowStyle.Hidden
+        ' application.CreateNoWindow = True
+        process = process.Start(application)
+        Dim command As String = "BCDEDIT>C:\BCDinfo.txt" _
+           & vbCrLf & "exit"
+        'myStreamWriter.WriteLine(Forms.Keys.Control + Forms.Keys.C)
+        process.StandardInput.WriteLine(command)
+        process.WaitForExit()
+        'System.Threading.Thread.Sleep(1000)
+        'process.Kill()
+        process.Close()
+    End Sub
 
-    Public Function FindStringInFile() As Boolean
-        Dim Reader As System.IO.StreamReader
-        Reader = New IO.StreamReader("C:\BCDinfo.txt")
-        Dim stringReader As String
+    Sub FindStringInFile()
+
         Try
-            While Reader.Peek <> -1
-                stringReader = Reader.ReadLine()
-                If InStr(stringReader, ".efi") > 0 Then Return True
-            End While
-            Reader.Close()
-            Return False
+            If File.ReadAllText("C:\BCDinfo.txt").Length = 0 Then
+                MessageBox.Show("Reading Bootloader is slow" & vbNewLine & _
+                         "Please try 2 step method", AppName, _
+                MessageBoxButtons.OK, MessageBoxIcon.Information)
+                'EFIq = 0 'NONE
+            Else
+                EFIq = 2
+                Dim Reader As System.IO.StreamReader
+                Reader = New IO.StreamReader("C:\BCDinfo.txt")
+                Dim stringReader As String
+                'Try '__
+
+                While Reader.Peek <> -1
+                    stringReader = Reader.ReadLine()
+                    If InStr(stringReader, ".efi") > 0 Then EFIq = 1 'UEFI
+                End While
+                Reader.Close()
+                'EFIq = 2 'LEGACY
+            End If
         Catch ex As Exception
-            MessageBox.Show("Exception: " & ex.Message)
-            Return False
+            'MessageBox.Show("Exception: " & ex.Message
+            If MessageBox.Show("Threre seems to be an error!" & vbNewLine & _
+                     "Please close any open Command Prompt windows" & vbNewLine & _
+                     "Click 'Yes' to continue", AppName, _
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                'FindStringInFile()
+                '####################################################
+                '####################################################
+                '####################################################
+                '####################################################
+                'ALTERNATIVE METHOD
+                Button1.Visible = True
+                Button2.Visible = True
+                Label3.Visible = True
+
+                ' Return False
+            End If
+            'Return False
         End Try
-    End Function
+
+    End Sub
 
 
 
@@ -90,28 +174,28 @@ Public Class Form1
     'End Sub
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        BCDWrite()
-    End Sub
+    'Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    '    BCDWrite()
+    'End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        If System.IO.File.Exists("C:\BCDinfo.txt") = True Then
-            If FindStringInFile() Then
-                'MessageBox.Show("Serial number found")
-                Label1.Text = "Boot mode: UEFI"
-                Label1.Visible = True
-                bootmode = "UEFI"
+    'Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    '    If System.IO.File.Exists("C:\BCDinfo.txt") = True Then
+    '        If FindStringInFile() Then
+    '            'MessageBox.Show("Serial number found")
+    '            Label1.Text = "Boot mode: UEFI"
+    '            Label1.Visible = True
+    '            bootmode = "UEFI"
 
-            Else
-                Label1.Text = "Boot mode: Legacy"
-                Label1.Visible = True
-                bootmode = "Legacy"
-            End If
-        Else
-            MessageBox.Show("Step1 incomplete")
-        End If
-        Button3.Enabled = True
-    End Sub
+    '        Else
+    '            Label1.Text = "Boot mode: Legacy"
+    '            Label1.Visible = True
+    '            bootmode = "Legacy"
+    '        End If
+    '    Else
+    '        MessageBox.Show("Step1 incomplete")
+    '    End If
+    '    Button3.Enabled = True
+    'End Sub
 
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -140,6 +224,9 @@ Public Class Form1
             ' part2() 'device (VHD)
 
             part3() 'OSdevice (VHD)
+
+        Else
+            Me.Close()
 
         End If
 
@@ -192,6 +279,11 @@ Public Class Form1
     End Sub
 
     Sub LoadUID()
+        If File.ReadAllText("C:\defguid.txt").Length = 0 Then
+            MessageBox.Show("UUID not found" & vbNewLine & _
+                     "Try Deploying the bootloader again, use EasyBCD to remove excess entries!", AppName, _
+            MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
         Dim fileReader As String
         fileReader = My.Computer.FileSystem.ReadAllText("C:\defguid.txt")
         Dim MidWords As String = Mid(fileReader, 38)
@@ -205,7 +297,19 @@ Public Class Form1
     End Sub
 
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        'BUTTON ONE
+        BCDWrite()
 
+        '------------------------------------------
+    End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        'BUTTON TWO
+        UEFICheck()
+        Button3.Enabled = True
+        Label3.Visible = False
 
+        '-------------------------------------------------------------
+    End Sub
 End Class
