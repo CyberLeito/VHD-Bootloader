@@ -10,9 +10,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("VHD Bootloader Deployer")> 
 <Assembly: AssemblyDescription("Install VHD bootloader")> 
-<Assembly: AssemblyCompany("DCO")> 
+<Assembly: AssemblyCompany("CyberLeito")> 
 <Assembly: AssemblyProduct("BootloaderDeployer")> 
-<Assembly: AssemblyCopyright("Copyright © Munawwar Mohamed  2016")> 
+<Assembly: AssemblyCopyright("Munawwar Mohamed © 2016")> 
 <Assembly: AssemblyTrademark("CyberLeito")> 
 
 <Assembly: ComVisible(False)>
