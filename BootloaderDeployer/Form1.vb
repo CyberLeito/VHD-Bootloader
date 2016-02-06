@@ -140,8 +140,9 @@ Public Class Form1
             End If
         Catch ex As Exception
             'MessageBox.Show("Exception: " & ex.Message
-            If MessageBox.Show("Threre seems to be an error!" & vbNewLine & _
-                     "Please close any open Command Prompt windows" & vbNewLine & _
+            If MessageBox.Show("Automatic bootmode identification failed!" & vbNewLine & _
+                     "Please close any open Command Prompt window!" & vbNewLine & _
+                     "And continue to 'Step1' to manually identify the bootmode" & vbNewLine & _
                      "Click 'Yes' to continue", AppName, _
             MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 'FindStringInFile()
@@ -222,6 +223,7 @@ Public Class Form1
             LoadUID() 'truncateUID
 
             ' part2() 'device (VHD)
+            Timeout()
 
             part3() 'OSdevice (VHD)
 
@@ -250,7 +252,21 @@ Public Class Form1
         process.Close()
     End Sub
 
-    Sub part2()
+    'Sub part2()
+    '    Dim application As New ProcessStartInfo("cmd.exe") With
+    '                    {.RedirectStandardInput = True, .UseShellExecute = False}
+    '    Dim process As New Process
+    '    application.WindowStyle = ProcessWindowStyle.Hidden
+    '    application.CreateNoWindow = True
+    '    process = process.Start(application)
+
+    '    Dim command As String = "bcdedit /set " & UIDval & " device vhd=[locate]\Win10DDAC.vhd" _
+    '       & vbCrLf & "exit"
+    '    process.StandardInput.WriteLine(command)
+    '    process.Close()
+    'End Sub
+
+    Sub Timeout()
         Dim application As New ProcessStartInfo("cmd.exe") With
                         {.RedirectStandardInput = True, .UseShellExecute = False}
         Dim process As New Process
@@ -258,7 +274,7 @@ Public Class Form1
         application.CreateNoWindow = True
         process = process.Start(application)
 
-        Dim command As String = "bcdedit /set " & UIDval & " device vhd=[locate]\Win10DDAC.vhd" _
+        Dim command As String = "bcdedit /timeout 15" _
            & vbCrLf & "exit"
         process.StandardInput.WriteLine(command)
         process.Close()

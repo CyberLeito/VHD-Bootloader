@@ -10,3 +10,6 @@ C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\Bootloa
 C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\bin\Debug\BootloaderDeployer.exe.config
 C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\obj\Debug\BootloaderDeployer.TrustInfo.xml
 C:\Users\XfediE\documents\visual studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\obj\Debug\BootloaderDeployer.exe.manifest
+C:\Users\XfediE\Documents\Visual Studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\bin\Debug\BootloaderDeployer.exe.manifest
+C:\Users\XfediE\Documents\Visual Studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\bin\Debug\BootloaderDeployer.application
+C:\Users\XfediE\Documents\Visual Studio 2013\Projects\BootloaderDeployer\BootloaderDeployer\obj\Debug\BootloaderDeployer.application
