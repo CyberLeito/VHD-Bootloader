@@ -66,7 +66,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Acidrums4-Betelgeuse-Devices-audio-card.ico</ApplicationIcon>
+    <ApplicationIcon>Icons-Land-Vista-Hardware-Devices-Motherboard.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -172,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Acidrums4-Betelgeuse-Devices-audio-card.ico" />
+    <Content Include="Icons-Land-Vista-Hardware-Devices-Motherboard.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

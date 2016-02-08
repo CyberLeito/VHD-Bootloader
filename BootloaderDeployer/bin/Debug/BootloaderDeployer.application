@@ -4,14 +4,14 @@
   <description asmv2:publisher="BootloaderDeployer" asmv2:product="BootloaderDeployer" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="BootloaderDeployer.exe.manifest" size="7253">
+    <dependentAssembly dependencyType="install" codebase="BootloaderDeployer.exe.manifest" size="7670">
       <assemblyIdentity name="BootloaderDeployer.exe" version="2.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>3nOTPtqq80hpC+3CtmLa1qVNUKs=</dsig:DigestValue>
+        <dsig:DigestValue>bUYap6J3JrmIZH0XzOgkQTvqORI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

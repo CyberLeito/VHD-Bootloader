@@ -325,6 +325,8 @@ Public Class Form1
         UEFICheck()
         Button3.Enabled = True
         Label3.Visible = False
+        Button1.Visible = False
+        Button2.Visible = False
 
         '-------------------------------------------------------------
     End Sub
