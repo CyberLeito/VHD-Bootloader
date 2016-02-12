@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="BootloaderDeployer.exe" version="3.0.0.0" publicKeyToken="220fbea6fb3258a4" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Icons-Land-Vista-Hardware-Devices-Motherboard.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="BootloaderDeployer" version="3.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="BootloaderDeployer.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet class="System.Security.PermissionSet" version="1" ID="Custom" SameSite="site" Unrestricted="true" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+            If you want to change the Windows User Account Control level replace the 
+            requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel node will disable file and registry virtualization.
+            If you want to utilize File and Registry Virtualization for backward 
+            compatibility then delete the requestedExecutionLevel node.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BootloaderDeployer.exe" size="623488">
+      <assemblyIdentity name="BootloaderDeployer" version="3.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>aJ2dTCAUC2L3JkanGX1tpgdvXBY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Acidrums4-Betelgeuse-Devices-audio-card.ico" size="161862">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>mNYx5BRYN0uUGKwxPIC3IcM+OsA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="BootloaderDeployer.exe.config" size="1236">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Iu6X15BZk+N3SxEp9S0iO7rUTUs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Icons-Land-Vista-Hardware-Devices-Motherboard.ico" size="432254">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>mobtSceTAXKntrQHOhnaaq2oJEw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of all Windows versions that this application is designed to work with. 
+      Windows will automatically select the most compatible environment.-->
+      <!-- If your application is designed to work with Windows Vista, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"></supportedOS>-->
+      <!-- If your application is designed to work with Windows 7, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+      <!-- If your application is designed to work with Windows 8, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"></supportedOS>-->
+      <!-- If your application is designed to work with Windows 8.1, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>-->
+    </application>
+  </compatibility>
+<publisherIdentity name="E=munawwar_mi@hotmail.com, O=DCO Corps, S=Ga.Villingili, C=MV, CN=Munawwar Mohamed" issuerKeyHash="69f3fe5b33b0b7ba9eb3cb7df727c6bf175bb271" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>jXeW71V1BnNia9L1JRaJ4zlwG1U=</DigestValue></Reference></SignedInfo><SignatureValue>jMIHcAFKpsW11WUJOCV7jH7gDcZudwJggv9MsTVINBpR+c27eDDDttMTACzemPhxUCL3Hdcj5rwyXKT1fCTjX5F7FPWjCJ4ZbRbhU+mWtWWozL22g4Xt4OAvmnV9iAFrrg2oP+3ZjO5h1TkOoNRigXD5ataMG9CDfHefldQzAV0=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>soYL+4wRlBy4nsPO8OqBsQmdRmgCD0hr3zk0N+WCQcosTKsSmbRuKtl9tN5+j4ahpsQzgVIkvp7+d4YpWrzyQjY9mi00s4tR+VLmjPDecjV9qEXEX9tlbKQ0QoVE9+wfj1+CWcwp/ixkO9q8mppkTOBfiO07LO0q7VzlfnbIuYk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="551b7039e3891625f5d26b6273067555ef96778d" Description="" Url=""><as:assemblyIdentity name="BootloaderDeployer.exe" version="3.0.0.0" publicKeyToken="220fbea6fb3258a4" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>E=munawwar_mi@hotmail.com, O=DCO Corps, S=Ga.Villingili, C=MV, CN=Munawwar Mohamed</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>fa1IC33p4pLgKhY9EbOIYJzS7lg=</DigestValue></Reference></SignedInfo><SignatureValue>NO2DuXE/IReOILCiWbbwBU9ieAcqiyBodwhWeHPB7mQskBc/Kl3UjKDHUn2G51wu/3lsSeIUWCIezP1qrIDTyvl/Odkc9/1Bg1RG/QdbKl1UOznxM8HZ78g9rd+Ym730ln8AmFbkYYC/sUXrPhlC5SYCnQRsA+T2c33O1Z6AjnA=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>soYL+4wRlBy4nsPO8OqBsQmdRmgCD0hr3zk0N+WCQcosTKsSmbRuKtl9tN5+j4ahpsQzgVIkvp7+d4YpWrzyQjY9mi00s4tR+VLmjPDecjV9qEXEX9tlbKQ0QoVE9+wfj1+CWcwp/ixkO9q8mppkTOBfiO07LO0q7VzlfnbIuYk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICxjCCAi+gAwIBAgIJAJi/zsbq47muMA0GCSqGSIb3DQEBBQUAMHwxGTAXBgNVBAMMEE11bmF3d2FyIE1vaGFtZWQxCzAJBgNVBAYTAk1WMRYwFAYDVQQIDA1HYS5WaWxsaW5naWxpMRIwEAYDVQQKDAlEQ08gQ29ycHMxJjAkBgkqhkiG9w0BCQEWF211bmF3d2FyX21pQGhvdG1haWwuY29tMB4XDTE2MDEwMjA3MzUxNVoXDTIxMDEwMTA3MzUxNVowfDEZMBcGA1UEAwwQTXVuYXd3YXIgTW9oYW1lZDELMAkGA1UEBhMCTVYxFjAUBgNVBAgMDUdhLlZpbGxpbmdpbGkxEjAQBgNVBAoMCURDTyBDb3JwczEmMCQGCSqGSIb3DQEJARYXbXVuYXd3YXJfbWlAaG90bWFpbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALKGC/uMEZQcuJ7DzvDqgbEJnUZoAg9Ia985NDflgkHKLEyrEpm0birZfbTefo+GoabEM4FSJL6e/neGKVq88kI2PZotNLOLUflS5ozw3nI1fahFxF/bZWykNEKFRPfsH49fglnMKf4sZDvavJqaZEzgX4jtOyztKu1c5X52yLmJAgMBAAGjUDBOMB0GA1UdDgQWBBRp8/5bM7C3up6zy333J8a/F1uycTAfBgNVHSMEGDAWgBRp8/5bM7C3up6zy333J8a/F1uycTAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAFP7nMGHvPpS8klV5gGEg/nHCv5tWakd/Ly0kcdF9n+wU2a8c229IZDIQUvhC5ddv3sgOnEs+beaqA4sT0lFllvxMcT5dF08yPtqN6GzER8Hpu2K739xR9qqrG4729PgqZsFqNd6fAqZPEJhfNLQxceZTrcwJQI4TtMcY9XM/VyH</X509Certificate></X509Data></KeyInfo><Object><as:Timestamp>MIILUAYJKoZIhvcNAQcCoIILQTCCCz0CAQExCzAJBgUrDgMCGgUAMIGRBgkqhkiG
+9w0BBwGggYMEgYA07YO5cT8hF44gsKJZtvAFT2J4ByqLIGh3CFZ4c8HuZCyQFz8q
+XdSMoMdSfYbnXC7/eWxJ4hRYIh7M/WqsgNPK+X852Rz3/UGDVEb9B1sqXVQ7OfEz
+wdnvyD2t35ibvfSWfwCYVuRhgL+xRes+GULlJgKdBGwD5PZzfc7VnoCOcKCCCJkw
+ggPuMIIDV6ADAgECAhB+k+v7fMZOWepLmnfUBvw7MA0GCSqGSIb3DQEBBQUAMIGL
+MQswCQYDVQQGEwJaQTEVMBMGA1UECBMMV2VzdGVybiBDYXBlMRQwEgYDVQQHEwtE
+dXJiYW52aWxsZTEPMA0GA1UEChMGVGhhd3RlMR0wGwYDVQQLExRUaGF3dGUgQ2Vy
+dGlmaWNhdGlvbjEfMB0GA1UEAxMWVGhhd3RlIFRpbWVzdGFtcGluZyBDQTAeFw0x
+MjEyMjEwMDAwMDBaFw0yMDEyMzAyMzU5NTlaMF4xCzAJBgNVBAYTAlVTMR0wGwYD
+VQQKExRTeW1hbnRlYyBDb3Jwb3JhdGlvbjEwMC4GA1UEAxMnU3ltYW50ZWMgVGlt
+ZSBTdGFtcGluZyBTZXJ2aWNlcyBDQSAtIEcyMIIBIjANBgkqhkiG9w0BAQEFAAOC
+AQ8AMIIBCgKCAQEAsayzSVRLlxwSCtgleZEiVypv3LgmxENza8K/LlBa+xTCdo5D
+ASVDtKHiRfTot3vDdMwi17SUAAL3Te2/tLdEJGvNX0U70UTOQxJzF4KLabQry5ke
+rHIbJk1xH7Ex3ftRYQJTpqr1SSwFeEWlL4nO55nn/oziVz89xpLcSvh7M+R5Cvvw
+dYhBnP/FA1GZqtdsn5Nph2Upg4XCYBTEyMk7FNrAgfAfDXTekiKryvf7dHwn5vdK
+G3+nw54trorqpuaqJxZ9YfeYcRG84lChS+Vd+uUOpyyfqmUg09iW6Mh8pU5IRP8Z
+4kQHkgvXaISAXWp4ZEXNYEZ+VMETfMV58cnBcQIDAQABo4H6MIH3MB0GA1UdDgQW
+BBRfmvVuXMzMdJrU3X3vP9vsTIAu3TAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUH
+MAGGFmh0dHA6Ly9vY3NwLnRoYXd0ZS5jb20wEgYDVR0TAQH/BAgwBgEB/wIBADA/
+BgNVHR8EODA2MDSgMqAwhi5odHRwOi8vY3JsLnRoYXd0ZS5jb20vVGhhd3RlVGlt
+ZXN0YW1waW5nQ0EuY3JsMBMGA1UdJQQMMAoGCCsGAQUFBwMIMA4GA1UdDwEB/wQE
+AwIBBjAoBgNVHREEITAfpB0wGzEZMBcGA1UEAxMQVGltZVN0YW1wLTIwNDgtMTAN
+BgkqhkiG9w0BAQUFAAOBgQADCZuPee9/WTCq72i1+uMJHbtPggZdN1+mUp8Wjeoc
+kglEbvVt61h8MOj5aY0jcwsSb0eprjkR+Cqxm7Aaw47rWZYArc4MTbLQMaYIXCp6
+/OJ6HVdMqGUY6XlAYiWWbsfHN2qDIQiOQerd2Vc/HXdJhyoWBl6mOGoiEqNRGYN+
+tjCCBKMwggOLoAMCAQICEA7P9DjI/r81bgTYapgbGlAwDQYJKoZIhvcNAQEFBQAw
+XjELMAkGA1UEBhMCVVMxHTAbBgNVBAoTFFN5bWFudGVjIENvcnBvcmF0aW9uMTAw
+LgYDVQQDEydTeW1hbnRlYyBUaW1lIFN0YW1waW5nIFNlcnZpY2VzIENBIC0gRzIw
+HhcNMTIxMDE4MDAwMDAwWhcNMjAxMjI5MjM1OTU5WjBiMQswCQYDVQQGEwJVUzEd
+MBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xNDAyBgNVBAMTK1N5bWFudGVj
+IFRpbWUgU3RhbXBpbmcgU2VydmljZXMgU2lnbmVyIC0gRzQwggEiMA0GCSqGSIb3
+DQEBAQUAA4IBDwAwggEKAoIBAQCiYws5RLi7I6dESbsO/6HwYQpTk7CY260sD0rF
+bv+GPFNVDxXOBD8r/amWltm+YXkLW8lMhnbl4ENLIpXuwitDwZ/YaLSOQE/uhTi5
+EcUj8mRY8BUyb05Xoa6IpALXKh7NS+HdY9UXiTJbsF6ZWqidKFAOF+6W22E7RVEd
+zxJWC5JH/Kuu9mY9R6xwcueS51/NELnEg2SUGb0lgOHo0iKl0LoCeqF3k1tlw+4X
+dLxBhircCEyMkoyRLZ53RB9o1qh0d9sOWzKLVoszvdljyEmdOsXF6jML0vGjG/SL
+vtmzV4s73gSneiKyJK4ux3DFvk6DJgj7C72pT5kI4RAocqrNAgMBAAGjggFXMIIB
+UzAMBgNVHRMBAf8EAjAAMBYGA1UdJQEB/wQMMAoGCCsGAQUFBwMIMA4GA1UdDwEB
+/wQEAwIHgDBzBggrBgEFBQcBAQRnMGUwKgYIKwYBBQUHMAGGHmh0dHA6Ly90cy1v
+Y3NwLndzLnN5bWFudGVjLmNvbTA3BggrBgEFBQcwAoYraHR0cDovL3RzLWFpYS53
+cy5zeW1hbnRlYy5jb20vdHNzLWNhLWcyLmNlcjA8BgNVHR8ENTAzMDGgL6Athito
+dHRwOi8vdHMtY3JsLndzLnN5bWFudGVjLmNvbS90c3MtY2EtZzIuY3JsMCgGA1Ud
+EQQhMB+kHTAbMRkwFwYDVQQDExBUaW1lU3RhbXAtMjA0OC0yMB0GA1UdDgQWBBRG
+xmmjDkoUHtVM2lJjFz9eNrwN5jAfBgNVHSMEGDAWgBRfmvVuXMzMdJrU3X3vP9vs
+TIAu3TANBgkqhkiG9w0BAQUFAAOCAQEAeDu0kSoATPCPYjA3eKOEJwdvGLLeJdyg
+1JQDqoZOJZ+aQAMc3c7jecshaAbatjK0bb/0LCZjM+RJZG0N5sNnDvcFpDVsfIkW
+xumy37Lp3SDGcQ/NlXTctlzevTcfQ3jmeLXNKAQgo6rxS8SIKZEOgNER/N1cdm5P
+Xg5FRkFuDbDqOJqxOtoJcRD8HHm0gHusafT9nLYMFivxf1sJPZtb4hbKE4FtAC44
+DagpjyzhsvRaqQGvFZwsL0kb2yK7w/54lFHDhrGCiF3wPbRRoXkzKy57udwgCRNx
+62oZW8/opTBXLIlJP7nPf8m/PiJoY1OavWl0rMUdPH+S4MO8HNgEdTGCAfgwggH0
+AgEBMHIwXjELMAkGA1UEBhMCVVMxHTAbBgNVBAoTFFN5bWFudGVjIENvcnBvcmF0
+aW9uMTAwLgYDVQQDEydTeW1hbnRlYyBUaW1lIFN0YW1waW5nIFNlcnZpY2VzIENB
+IC0gRzICEA7P9DjI/r81bgTYapgbGlAwCQYFKw4DAhoFAKBdMBgGCSqGSIb3DQEJ
+AzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE2MDIxMDA4NDExMFowIwYJ
+KoZIhvcNAQkEMRYEFBxi9FV6G6UjAU1ec/YnC/QGkfjBMA0GCSqGSIb3DQEBAQUA
+BIIBAKG6Rz/Vc2SyLEkHTwFmduP+o1K4VYiCgrjSKnunCjD2L+klgv/80R1oOkQf
+C3ognFnpn6rM0h3adZ+wb9Rnt134teTgphFAUJBI5s9PCCF8+fJbs/ZkgxzuSiJ9
+jCX4/l9+kT9NIKEeoATRHNDc5GRPe2QrlDGtDKhNrbnqFIfW/ARf1mT6jYk3N59e
+v9BE7q3lkUho5GgxvfJn8XxrPqS8D6kQXp2Re8HxJ7w+hfJ62xNsk8i2LPsbv4Ww
+bM7FIZWrZeJVdvWPMUaMjzuqox+NwCNVdGRBq948+k9oGxzxsX+bRj/Xb5lkn2ag
+Sr7A54ZMSK/Gsd/7N7Egi57v2/4=
+</as:Timestamp></Object></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

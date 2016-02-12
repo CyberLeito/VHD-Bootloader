@@ -29,6 +29,7 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -45,9 +46,9 @@ Partial Class Form1
         'Button3
         '
         Me.Button3.Enabled = False
-        Me.Button3.Location = New System.Drawing.Point(57, 81)
+        Me.Button3.Location = New System.Drawing.Point(38, 81)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(150, 23)
+        Me.Button3.Size = New System.Drawing.Size(141, 23)
         Me.Button3.TabIndex = 3
         Me.Button3.Text = "Install Bootloader for VHD"
         Me.Button3.UseVisualStyleBackColor = True
@@ -55,7 +56,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 112)
+        Me.Label2.Location = New System.Drawing.Point(12, 107)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(39, 13)
         Me.Label2.TabIndex = 4
@@ -92,11 +93,21 @@ Partial Class Form1
         Me.Button2.UseVisualStyleBackColor = True
         Me.Button2.Visible = False
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(194, 81)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 8
+        Me.Button4.Text = "Delete Entry"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(296, 134)
+        Me.ClientSize = New System.Drawing.Size(296, 144)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button1)
@@ -117,5 +128,6 @@ Partial Class Form1
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
 
 End Class

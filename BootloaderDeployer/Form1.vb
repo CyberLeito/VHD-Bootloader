@@ -36,7 +36,6 @@ Public Class Form1
         Button3.Enabled = True
         '-------------------------------------------------------------
 
-
     End Sub
 
     Sub UEFICheck()
@@ -297,19 +296,31 @@ Public Class Form1
     Sub LoadUID()
         If File.ReadAllText("C:\defguid.txt").Length = 0 Then
             MessageBox.Show("UUID not found" & vbNewLine & _
-                     "Try Deploying the bootloader again, use EasyBCD to remove excess entries!", AppName, _
-            MessageBoxButtons.OK, MessageBoxIcon.Information)
+                     "Try Deploying the bootloader again, Click 'Delete Entry' to remove the failed entry", AppName, _
+            MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Try
+                Dim fileReader As String
+                fileReader = My.Computer.FileSystem.ReadAllText("C:\defguid.txt")
+                Dim MidWords As String = Mid(fileReader, 38)
+                Dim lenth As Integer = Len(MidWords)
+                'Dim MidWords As String = Mid(TestString, 5)
+                Dim FirstWord As String = Mid(MidWords, 1, lenth - 3)
+                UIDval = FirstWord
+                Label2.Text = "UUID: " & FirstWord
+                Label2.Visible = True
+
+                MessageBox.Show("Bootloader Installed", AppName, _
+                 MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Label2.Visible = False
+
+                'MsgBox(FirstWord)
+            Catch ex As Exception
+                MessageBox.Show("UUID Read Failed" & vbNewLine & _
+                    "Try Deploying the bootloader again, Click 'Delete Entry' to remove the failed entry", AppName, _
+           MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End Try
         End If
-        Dim fileReader As String
-        fileReader = My.Computer.FileSystem.ReadAllText("C:\defguid.txt")
-        Dim MidWords As String = Mid(fileReader, 38)
-        Dim lenth As Integer = Len(MidWords)
-        'Dim MidWords As String = Mid(TestString, 5)
-        Dim FirstWord As String = Mid(MidWords, 1, lenth - 3)
-        UIDval = FirstWord
-        Label2.Text = "UUID: " & FirstWord
-        Label2.Visible = True
-        'MsgBox(FirstWord)
     End Sub
 
 
@@ -329,5 +340,53 @@ Public Class Form1
         Button2.Visible = False
 
         '-------------------------------------------------------------
+    End Sub
+
+    Sub deleteEntry()
+        Dim delID As String = ""
+        If System.IO.File.Exists("C:\defguid.txt") = True Then
+
+            If Not File.ReadAllText("C:\defguid.txt").Length = 0 Then
+                Try
+                    Dim fileReader As String
+                    fileReader = My.Computer.FileSystem.ReadAllText("C:\defguid.txt")
+                    Dim MidWords As String = Mid(fileReader, 38)
+                    Dim lenth As Integer = Len(MidWords)
+                    'Dim MidWords As String = Mid(TestString, 5)
+                    delID = Mid(MidWords, 1, lenth - 3)
+                    ' UIDval = FirstWord
+                Catch ex As Exception
+                    'MsgBox("UUID Read failed!")
+                End Try
+                '---------------------------------------------------------------------------------
+                Dim application As New ProcessStartInfo("cmd.exe") With
+                            {.RedirectStandardInput = True, .UseShellExecute = False}
+                Dim process As New Process
+                application.WindowStyle = ProcessWindowStyle.Hidden
+                application.CreateNoWindow = True
+                process = process.Start(application)
+
+                Dim command As String = "bcdedit /delete " & delID _
+                   & vbCrLf & "exit"
+                process.StandardInput.WriteLine(command)
+                process.Close()
+                '---------------------------------------------------------------------------------
+                MessageBox.Show("Bootloader removed", AppName, _
+                 MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Label2.Visible = False
+            End If
+
+            File.Delete("C:\defguid.txt")
+        Else
+            MessageBox.Show("Bootloader info file does not exist!" & vbNewLine & _
+                     "Use EasyBCD to remove boot entries!", AppName, _
+            MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        deleteEntry()
+        
     End Sub
 End Class
